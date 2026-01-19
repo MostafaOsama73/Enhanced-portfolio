@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostafa | Portfolio</title>
+    <meta name="description" content="Portfolio of Mostafa - Professional Developer">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="gradient-bg">
+        <div class="g-blob g-blob-1"></div>
+        <div class="g-blob g-blob-2"></div>
+        <div class="g-blob g-blob-3"></div>
+    </div>
+
+    <!-- Cursor Animation Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">Mostafa<span class="accent">.</span></a>
+
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-button">Contact Me</a>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section hidden">
+            <div class="hero-content">
+                <span class="hero-greeting">Hello, I'm</span>
+                <h1 class="hero-title">Mostafa Osama</h1>
+                <div class="hero-subtitle-container">
+                    <span class="hero-static">I am a </span>
+                    <span class="hero-dynamic" id="typing-text"></span>
+                </div>
+                <p class="hero-description">
+                    Back-end Developer based in Egypt. Specialized in building scalable APIs and robust applications
+                    with .NET and Modern Web Technologies.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-circle"></div>
+                <!-- Placeholder for Image or Abstract Art -->
+                <div class="hero-art">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section hidden">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+
+                    <div class="about-content">
+                        <h3>Aspiring Software Engineer | Building Scalable Backends & AI Models</h3>
+                        <p>
+                            Backend Software Engineer specializing in .NET and SQL Server. Currently developing scalable
+                            APIs at HG
+                            Technology and participating in the DEPI initiative. Passionate about Clean Architecture and
+                            optimizing
+                            database performance.
+                        </p>
+                        <p>
+                            My academic journey and personal projects have equipped me with a versatile toolkit—ranging
+                            from structuring databases with SQL to processing images with Computer Vision algorithms. I
+                            am eager to bring this technical versatility to a dynamic team.
+                        </p>
+                        <div class="info-items">
+                            <div class="info-item">
+                                <span class="label">Location:</span>
+                                <span class="value">Egypt</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Email:</span>
+                                <span class="value">mostafaosama1012005@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Phone:</span>
+                                <span class="value">+201207355566</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Availability:</span>
+                                <span class="value">Open to work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section hidden">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Student</div>
+                        <div class="timeline-content">
+                            <h3>Computer Science / AI Student</h3>
+                            <h4>Minufiya University</h4>
+                            <!-- <p>GPA: 3.18 out of 4</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section bg-light hidden">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Nov 2025 - Present</div>
+                        <div class="timeline-content">
+                            <h3>.NET Full-Stack Trainee</h3>
+                            <h4>Digital Egypt Pioneers Initiative (DEPI) | Egypt</h4>
+                            <p>
+                                Selected from <strong>1,000+ applicants</strong> for an intensive
+                                <strong>120-hour</strong> technical training program focused on modern
+                                .NET Web Development.
+                                Building responsive full-stack applications using ASP.NET Core MVC, HTML, CSS, and
+                                JavaScript.
+                                Developing scalable RESTful APIs and managing data persistence with MS SQL Server and
+                                Entity Framework.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Aug 2025 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Backend .NET Developer</h3>
+                            <h4>HGTechnologyGroup | Egypt</h4>
+                            <p>
+                                Designed and developed <strong>20+ scalable RESTful APIs</strong> using .NET 8 and
+                                Entity Framework Core,
+                                serving data to frontend applications.
+                                Optimized database queries using LINQ and MS SQL Server, reducing API response time
+                                <strong>by 40%</strong>.
+                                Collaborated with the mobile/frontend team to integrate endpoints and troubleshoot
+                                connection issues using Postman and Swagger.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section hidden">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project Card 1: EduFlow -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <!-- Placeholder -->
+                            <div class="img-placeholder-sm" style="color: var(--accent);"><i
+                                    class="fa-solid fa-graduation-cap fa-2x"></i></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>EduFlow</h3>
+                            <p>Spring Boot course management platform for secure enrollment and role-based access
+                                control. Thoroughly tested with 100 JUnit test cases.</p>
+                            <div class="project-tags">
+                                <span>Spring Boot</span>
+                                <span>Spring Security</span>
+                                <span>MySQL</span>
+                                <span>RESTful APIs</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/MostafaOsama73/EduFlow" target="_blank" class="icon-link"
+                                    title="View Code"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="icon-link" title="Live Demo"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Project Card 2: E-commerce Application -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <!-- Placeholder -->
+                            <div class="img-placeholder-sm" style="color: var(--accent);"><i
+                                    class="fa-solid fa-cart-shopping fa-2x"></i></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>E-commerce Application</h3>
+                            <p>Comprehensive eCommerce platform handling end-to-end shopping, product management, and
+                                order processing.</p>
+                            <div class="project-tags">
+                                <span>Spring Boot</span>
+                                <span>Spring Security</span>
+                                <span>MySQL</span>
+                                <span>RESTful APIs</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/MostafaOsama73/ecommerce" target="_blank" class="icon-link"
+                                    title="View Code"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="icon-link" title="Live Demo"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Project Card 3: Driver Drowsiness Detection -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <!-- Placeholder -->
+                            <div class="img-placeholder-sm" style="color: var(--accent);"><i
+                                    class="fa-solid fa-eye fa-2x"></i></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Driver Drowsiness Detection</h3>
+                            <p>Flask-based Deep Learning web app detecting driver fatigue using a custom-trained
+                                TensorFlow model and OpenCV.</p>
+                            <div class="project-tags">
+                                <span>Flask</span>
+                                <span>TensorFlow</span>
+                                <span>OpenCV</span>
+                                <span>NumPy</span>
+                                <span>HTML/JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/MostafaOsama73/DDD-Model" target="_blank" class="icon-link"
+                                    title="View Code"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="icon-link" title="Live Demo"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section bg-light hidden">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-tag">C#</div>
+                    <div class="skill-tag">Java</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">HTML</div>
+                    <div class="skill-tag">CSS</div>
+                    <div class="skill-tag">.NET</div>
+                    <div class="skill-tag">Spring Boot</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">SSMS</div>
+                    <div class="skill-tag">Postman</div>
+                    <div class="skill-tag">GitHub</div>
+                    <div class="skill-tag">MS SQL Server</div>
+                    <div class="skill-tag">MySQL</div>
+                    <div class="skill-tag">RabbitMQ</div>
+                    <div class="skill-tag">GitHub Actions</div>
+                    <div class="skill-tag">SOLID</div>
+                    <div class="skill-tag">Design Patterns</div>
+                    <div class="skill-tag">Unit Testing</div>
+                    <div class="skill-tag">Clean Architecture</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section hidden">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <h3>Certified Spring Boot Developer</h3>
+                        <p>Udemy</p>
+                    </div>
+                    <div class="cert-card">
+                        <h3>SQL (Advanced) Certificate</h3>
+                        <p>HackerRank</p>
+                    </div>
+                    <div class="cert-card">
+                        <h3>SQL (Intermediate) Certificate</h3>
+                        <p>HackerRank</p>
+                    </div>
+                    <div class="cert-card">
+                        <h3>SQL (Basic) Certificate</h3>
+                        <p>HackerRank</p>
+                    </div>
+                    <div class="cert-card">
+                        <h3>Git and GitHub</h3>
+                        <p>Almdrasa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section hidden">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <p>I'm currently available for freelance work or full-time positions. If you have a project that
+                        needs some coding magic, let's talk.</p>
+                    <a href="mailto:mostafaosama1012005@gmail.com" class="btn btn-primary big-btn">Say Hello <i
+                            class="fa-regular fa-envelope"></i></a>
+
+                    <div class="social-links">
+                        <a href="https://github.com/MostafaOsama73" target="_blank" class="social-link"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/mostafa-osama-dev" target="_blank" class="social-link"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Mostafa. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
