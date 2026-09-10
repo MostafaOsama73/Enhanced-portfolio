@@ -7,6 +7,9 @@
     <title>Mostafa | Portfolio</title>
     <meta name="description" content="Portfolio of Mostafa - Professional Developer">
 
+    <!-- Favicon Tab Icon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +25,9 @@
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
     <!-- Background Animation -->
     <div class="gradient-bg">
         <div class="g-blob g-blob-1"></div>
@@ -30,8 +36,8 @@
     </div>
 
     <!-- Cursor Animation Elements -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
 
     <header class="header">
         <nav class="nav-container">
@@ -42,6 +48,7 @@
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#" id="nav-cv-link" class="nav-cv-btn"><i class="fa-solid fa-file-pdf"></i> Resume</a>
                 <a href="#contact" class="nav-button">Contact Me</a>
             </div>
 
@@ -62,19 +69,59 @@
                     <span class="hero-dynamic" id="typing-text"></span>
                 </div>
                 <p class="hero-description">
-                    Back-end Developer based in Egypt. Specialized in building scalable APIs and robust applications
-                    with .NET and Modern Web Technologies.
+                    Microsoft Dynamics 365 F&O Developer with a strong .NET backend engineering foundation. Specialized
+                    in building enterprise solutions and scalable web applications.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#" id="hero-cv-btn" class="btn btn-cv"><i class="fa-solid fa-file-arrow-down"></i> Resume /
+                        CV</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="visual-circle"></div>
-                <!-- Placeholder for Image or Abstract Art -->
                 <div class="hero-art">
-                    <i class="fa-solid fa-code"></i>
+                    <div class="hero-icon-container">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="hero-tech-badge badge-top-right">
+                        <i class="fa-brands fa-microsoft"></i> <span>D365 F&O</span>
+                    </div>
+                    <div class="hero-tech-badge badge-bottom-left">
+                        <i class="fa-solid fa-layer-group"></i> <span>.NET 8 API</span>
+                    </div>
+                    <div class="hero-tech-badge badge-bottom-right">
+                        <i class="fa-solid fa-database"></i> <span>SQL Server</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Impact Stats Section -->
+        <section class="stats-section hidden">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
+                        <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                        <div class="stat-label">RESTful APIs Built</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                        <div class="stat-number" data-target="40" data-suffix="%">0</div>
+                        <div class="stat-label">Query Speedup</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div class="stat-number" data-target="1000" data-suffix="+">0</div>
+                        <div class="stat-label">DEPI Program Applicants</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <div class="stat-number" data-target="4" data-suffix="+">0</div>
+                        <div class="stat-label">Production Roles & Projects</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -86,20 +133,31 @@
                 <div class="about-grid">
 
                     <div class="about-content">
-                        <h3>Aspiring Software Engineer | Building Scalable Backends & AI Models</h3>
+                        <h3>Microsoft Dynamics 365 F&O & .NET Backend Developer</h3>
                         <p>
-                            Backend Software Engineer specializing in .NET and SQL Server. Currently developing scalable
-                            APIs at HG
-                            Technology and participating in the DEPI initiative. Passionate about Clean Architecture and
-                            optimizing
-                            database performance.
+                            Microsoft Dynamics 365 F&O Developer with a strong .NET backend engineering foundation and
+                            professional experience building enterprise and web applications. Currently developing and
+                            extending D365 F&O solutions using X++, including forms, tables, classes, extensions,
+                            workflows, business logic, and validations.
                         </p>
                         <p>
-                            My academic journey and personal projects have equipped me with a versatile toolkit—ranging
-                            from structuring databases with SQL to processing images with Computer Vision algorithms. I
-                            am eager to bring this technical versatility to a dynamic team.
+                            Experienced in RESTful API development, SQL Server, Entity Framework Core, and maintainable
+                            software design. I am eager to bring this technical versatility to a dynamic team.
                         </p>
                         <div class="info-items">
+                            <div class="info-item">
+                                <span class="label">Current Position:</span>
+                                <span class="value">Microsoft Dynamics 365 F&O Developer at <strong
+                                        class="accent">Zescope</strong></span>
+                            </div>
+                            <!-- <div class="info-item">
+                                <span class="label">Availability:</span>
+                                <span class="value">
+                                    <span class="status-badge">
+                                        <span class="status-dot"></span> Open to Work
+                                    </span>
+                                </span>
+                            </div> -->
                             <div class="info-item">
                                 <span class="label">Location:</span>
                                 <span class="value">Egypt</span>
@@ -110,11 +168,7 @@
                             </div>
                             <div class="info-item">
                                 <span class="label">Phone:</span>
-                                <span class="value">+201207355566</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Availability:</span>
-                                <span class="value">Open to work</span>
+                                <span class="value">+20 120 735 5566</span>
                             </div>
                         </div>
                     </div>
@@ -129,11 +183,15 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">Student</div>
+                        <div class="timeline-date">Jun 2026</div>
                         <div class="timeline-content">
-                            <h3>Computer Science / AI Student</h3>
-                            <h4>Minufiya University</h4>
-                            <!-- <p>GPA: 3.18 out of 4</p> -->
+                            <h3>B.Sc. in Machine Intelligence</h3>
+                            <h4>Faculty of Artificial Intelligence, Minufiya University</h4>
+                            <p>Graduation Project – Smart Care System<br>
+                                • Designed and developed a .NET 8 and SQL Server backend with secure RESTful APIs.<br>
+                                • Integrated external diagnostic services with the backend through structured API
+                                communication.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -148,36 +206,66 @@
                     <!-- Experience Item 1 -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">Nov 2025 - Present</div>
+                        <div class="timeline-date">Sep 2026 - Present</div>
                         <div class="timeline-content">
-                            <h3>.NET Full-Stack Trainee</h3>
-                            <h4>Digital Egypt Pioneers Initiative (DEPI) | Egypt</h4>
+                            <h3>Microsoft Dynamics 365 F&O Developer</h3>
+                            <h4>Zescope</h4>
                             <p>
-                                Selected from <strong>1,000+ applicants</strong> for an intensive
-                                <strong>120-hour</strong> technical training program focused on modern
-                                .NET Web Development.
-                                Building responsive full-stack applications using ASP.NET Core MVC, HTML, CSS, and
-                                JavaScript.
-                                Developing scalable RESTful APIs and managing data persistence with MS SQL Server and
-                                Entity Framework.
+                                • Developing and extending Microsoft Dynamics 365 Finance & Operations solutions using
+                                X++ based on business requirements.<br>
+                                • Creating and customizing tables, forms, classes, extensions, menu items, workflows,
+                                business logic, and validations within D365 F&O.<br>
+                                • Troubleshooting application issues through debugging and code analysis while
+                                delivering maintainable extension-based customizations.<br>
+                                • Collaborating with functional consultants to translate business requirements into
+                                technical implementations.
                             </p>
                         </div>
                     </div>
                     <!-- Experience Item 2 -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">Aug 2025 - Present</div>
+                        <div class="timeline-date">Jul 2026 - Present</div>
                         <div class="timeline-content">
-                            <h3>Backend .NET Developer</h3>
-                            <h4>HGTechnologyGroup | Egypt</h4>
+                            <h3>Freelance Full-Stack Django Developer</h3>
+                            <h4>Wiseyeco</h4>
                             <p>
-                                Designed and developed <strong>20+ scalable RESTful APIs</strong> using .NET 8 and
-                                Entity Framework Core,
-                                serving data to frontend applications.
-                                Optimized database queries using LINQ and MS SQL Server, reducing API response time
-                                <strong>by 40%</strong>.
-                                Collaborated with the mobile/frontend team to integrate endpoints and troubleshoot
-                                connection issues using Postman and Swagger.
+                                • Developing and maintaining full-stack applications using Python, Django, Wagtail,
+                                PostgreSQL, and JavaScript.<br>
+                                • Building RESTful APIs, payment integrations, database structures, and role-based
+                                administrative workflows, while supporting production troubleshooting and deployment
+                                using Docker and Git.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Experience Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Aug 2025 - Sep 2026</div>
+                        <div class="timeline-content">
+                            <h3>.NET Backend Developer</h3>
+                            <h4>HG Technology Group</h4>
+                            <p>
+                                • Designed and developed 20+ scalable RESTful APIs using .NET 8 and Entity Framework
+                                Core for frontend and mobile applications.<br>
+                                • Optimized LINQ and SQL Server queries, reducing API response time by 40%.<br>
+                                • Collaborated with frontend and mobile teams to integrate endpoints and support
+                                application functionality.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Experience Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Nov 2025 - Jul 2026</div>
+                        <div class="timeline-content">
+                            <h3>.NET Full-Stack Trainee</h3>
+                            <h4>Digital Egypt Pioneers Initiative (DEPI)</h4>
+                            <p>
+                                • Selected from 1,000+ applicants for a 120-hour technical training program focused on
+                                modern .NET web development.<br>
+                                • Built full-stack applications and RESTful APIs using ASP.NET Core MVC, Entity
+                                Framework Core, SQL Server, HTML, CSS, and JavaScript.
                             </p>
                         </div>
                     </div>
@@ -189,80 +277,123 @@
         <section id="projects" class="section hidden">
             <div class="container">
                 <h2 class="section-title">Featured Projects</h2>
+
+                <!-- Category Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="dotnet">.NET 8 & C#</button>
+                    <button class="filter-btn" data-filter="d365">Dynamics 365 F&O</button>
+                    <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                </div>
+
                 <div class="projects-grid">
-                    <!-- Project Card 1: EduFlow -->
-                    <article class="project-card">
+                    <!-- Project Card 1: UniStay -->
+                    <article class="project-card" data-category="dotnet fullstack">
                         <div class="project-image">
-                            <!-- Placeholder -->
+                            <span class="status-pill open-source"><i class="fa-solid fa-code-branch"></i> Open Source</span>
                             <div class="img-placeholder-sm" style="color: var(--accent);"><i
-                                    class="fa-solid fa-graduation-cap fa-2x"></i></div>
+                                    class="fa-solid fa-building fa-2x"></i></div>
                         </div>
                         <div class="project-info">
-                            <h3>EduFlow</h3>
-                            <p>Spring Boot course management platform for secure enrollment and role-based access
-                                control. Thoroughly tested with 100 JUnit test cases.</p>
+                            <h3>UniStay – Student Housing System</h3>
+                            <p>Built a student housing marketplace with JWT authentication, role-based workflows, Paymob
+                                payments, real-time chat, background jobs, and validation.</p>
                             <div class="project-tags">
-                                <span>Spring Boot</span>
-                                <span>Spring Security</span>
-                                <span>MySQL</span>
-                                <span>RESTful APIs</span>
+                                <span>.NET 8</span>
+                                <span>ASP.NET Core</span>
+                                <span>EF Core</span>
+                                <span>SQL Server</span>
+                                <span>SignalR</span>
+                                <span>Paymob</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/MostafaOsama73/EduFlow" target="_blank" class="icon-link"
+                                <a href="https://github.com/MostafaOsama73" target="_blank" class="icon-link"
                                     title="View Code"><i class="fa-brands fa-github"></i></a>
-                                <a href="#" class="icon-link" title="Live Demo"><i
-                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <button class="btn-project-details" data-project="unistay"><i
+                                        class="fa-solid fa-circle-info"></i> Architecture Specs</button>
                             </div>
                         </div>
                     </article>
-                    <!-- Project Card 2: E-commerce Application -->
-                    <article class="project-card">
+
+                    <!-- Project Card 2: SmartCareSystem -->
+                    <article class="project-card" data-category="dotnet">
                         <div class="project-image">
-                            <!-- Placeholder -->
+                            <span class="status-pill active-api"><i class="fa-solid fa-shield-halved"></i> Production API</span>
                             <div class="img-placeholder-sm" style="color: var(--accent);"><i
-                                    class="fa-solid fa-cart-shopping fa-2x"></i></div>
+                                    class="fa-solid fa-stethoscope fa-2x"></i></div>
                         </div>
                         <div class="project-info">
-                            <h3>E-commerce Application</h3>
-                            <p>Comprehensive eCommerce platform handling end-to-end shopping, product management, and
-                                order processing.</p>
+                            <h3>SmartCareSystem Backend API</h3>
+                            <p>Healthcare management backend with doctor/patient roles, health data management,
+                                transaction rollback, and secure API integration following Clean Architecture.</p>
                             <div class="project-tags">
-                                <span>Spring Boot</span>
-                                <span>Spring Security</span>
-                                <span>MySQL</span>
-                                <span>RESTful APIs</span>
+                                <span>.NET 8</span>
+                                <span>ASP.NET Core</span>
+                                <span>EF Core</span>
+                                <span>SQL Server</span>
+                                <span>JWT</span>
+                                <span>AutoMapper</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/MostafaOsama73/ecommerce" target="_blank" class="icon-link"
+                                <a href="https://github.com/MostafaOsama73" target="_blank" class="icon-link"
                                     title="View Code"><i class="fa-brands fa-github"></i></a>
-                                <a href="#" class="icon-link" title="Live Demo"><i
-                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <button class="btn-project-details" data-project="smartcare"><i
+                                        class="fa-solid fa-circle-info"></i> Architecture Specs</button>
                             </div>
                         </div>
                     </article>
-                    <!-- Project Card 3: Driver Drowsiness Detection -->
-                    <article class="project-card">
+
+                    <!-- Project Card 3: NarcosStore -->
+                    <article class="project-card" data-category="dotnet">
                         <div class="project-image">
-                            <!-- Placeholder -->
+                            <span class="status-pill ready-api"><i class="fa-solid fa-bolt"></i> .NET 8 REST</span>
                             <div class="img-placeholder-sm" style="color: var(--accent);"><i
-                                    class="fa-solid fa-eye fa-2x"></i></div>
+                                    class="fa-solid fa-gamepad fa-2x"></i></div>
                         </div>
                         <div class="project-info">
-                            <h3>Driver Drowsiness Detection</h3>
-                            <p>Flask-based Deep Learning web app detecting driver fatigue using a custom-trained
-                                TensorFlow model and OpenCV.</p>
+                            <h3>E-Commerce API</h3>
+                            <p>Production-ready REST API for a gaming product marketplace with JWT auth, role
+                                authorization, order management, layered architecture, and AutoMapper.</p>
                             <div class="project-tags">
-                                <span>Flask</span>
-                                <span>TensorFlow</span>
-                                <span>OpenCV</span>
-                                <span>NumPy</span>
-                                <span>HTML/JS</span>
+                                <span>.NET 8</span>
+                                <span>ASP.NET Core</span>
+                                <span>EF Core</span>
+                                <span>SQL Server</span>
+                                <span>JWT</span>
+                                <span>AutoMapper</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/MostafaOsama73/DDD-Model" target="_blank" class="icon-link"
-                                    title="View Code"><i class="fa-brands fa-github"></i></a>
-                                <a href="#" class="icon-link" title="Live Demo"><i
-                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/MostafaOsama73/NarcosStore" target="_blank"
+                                    class="icon-link" title="View Code"><i class="fa-brands fa-github"></i></a>
+                                <button class="btn-project-details" data-project="narcos"><i
+                                        class="fa-solid fa-circle-info"></i> Architecture Specs</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 4: D365 F&O Extensions -->
+                    <article class="project-card" data-category="d365">
+                        <div class="project-image">
+                            <span class="status-pill enterprise"><i class="fa-brands fa-microsoft"></i> Enterprise Suite</span>
+                            <div class="img-placeholder-sm" style="color: var(--accent);"><i
+                                    class="fa-brands fa-microsoft fa-2x"></i></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>D365 F&O Enterprise Solutions</h3>
+                            <p>Developed custom X++ tables, forms, data entities, workflows, business logic, and
+                                extension-based customizations for Microsoft Dynamics 365 F&O.</p>
+                            <div class="project-tags">
+                                <span>Dynamics 365 F&O</span>
+                                <span>X++</span>
+                                <span>Data Entities</span>
+                                <span>Workflows</span>
+                                <span>Custom Extensions</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#experience" class="icon-link" title="View Experience"><i
+                                        class="fa-solid fa-briefcase"></i></a>
+                                <button class="btn-project-details" data-project="d365"><i
+                                        class="fa-solid fa-circle-info"></i> Architecture Specs</button>
                             </div>
                         </div>
                     </article>
@@ -274,26 +405,115 @@
         <section id="skills" class="section bg-light hidden">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-container">
-                    <div class="skill-tag">C#</div>
-                    <div class="skill-tag">Java</div>
-                    <div class="skill-tag">Python</div>
-                    <div class="skill-tag">HTML</div>
-                    <div class="skill-tag">CSS</div>
-                    <div class="skill-tag">.NET</div>
-                    <div class="skill-tag">Spring Boot</div>
-                    <div class="skill-tag">Git</div>
-                    <div class="skill-tag">SSMS</div>
-                    <div class="skill-tag">Postman</div>
-                    <div class="skill-tag">GitHub</div>
-                    <div class="skill-tag">MS SQL Server</div>
-                    <div class="skill-tag">MySQL</div>
-                    <div class="skill-tag">RabbitMQ</div>
-                    <div class="skill-tag">GitHub Actions</div>
-                    <div class="skill-tag">SOLID</div>
-                    <div class="skill-tag">Design Patterns</div>
-                    <div class="skill-tag">Unit Testing</div>
-                    <div class="skill-tag">Clean Architecture</div>
+                <div class="skills-category-grid">
+                    <!-- Category 1: Enterprise & ERP -->
+                    <div class="skill-category-card">
+                        <h3><i class="fa-brands fa-microsoft accent"></i> Enterprise & ERP</h3>
+                        <div class="skills-tags-group">
+                            <div class="skill-tag">Dynamics 365 F&O</div>
+                            <div class="skill-tag">X++</div>
+                            <div class="skill-tag">C#</div>
+                            <div class="skill-tag">.NET 8</div>
+                            <div class="skill-tag">ASP.NET Core</div>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Backend Architecture -->
+                    <div class="skill-category-card">
+                        <h3><i class="fa-solid fa-diagram-project accent"></i> Backend Architecture</h3>
+                        <div class="skills-tags-group">
+                            <div class="skill-tag">Clean Architecture</div>
+                            <div class="skill-tag">RESTful APIs</div>
+                            <div class="skill-tag">EF Core</div>
+                            <div class="skill-tag">LINQ</div>
+                            <div class="skill-tag">Web API & MVC</div>
+                            <div class="skill-tag">AutoMapper</div>
+                            <div class="skill-tag">OOP & SOLID</div>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Databases & Messaging -->
+                    <div class="skill-category-card">
+                        <h3><i class="fa-solid fa-database accent"></i> Databases & Messaging</h3>
+                        <div class="skills-tags-group">
+                            <div class="skill-tag">SQL Server</div>
+                            <div class="skill-tag">PostgreSQL</div>
+                            <div class="skill-tag">RabbitMQ</div>
+                            <div class="skill-tag">Hangfire</div>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Full-Stack & DevOps -->
+                    <div class="skill-category-card">
+                        <h3><i class="fa-solid fa-code accent"></i> Full-Stack & DevOps</h3>
+                        <div class="skills-tags-group">
+                            <div class="skill-tag">Python & Django</div>
+                            <div class="skill-tag">Docker</div>
+                            <div class="skill-tag">Git & GitHub Actions</div>
+                            <div class="skill-tag">Java</div>
+                            <div class="skill-tag">C++</div>
+                            <div class="skill-tag">HTML / CSS / JS</div>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- Code Architecture Showcase Section -->
+        <section id="code-showcase" class="section hidden">
+            <div class="container">
+                <h2 class="section-title">Code Architecture Showcase</h2>
+                <div class="terminal-card">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-tabs">
+                            <button class="tab-btn active" data-tab="xplusplus"><i class="fa-brands fa-microsoft accent"></i> D365 F&O (X++)</button>
+                            <button class="tab-btn" data-tab="csharp"><i class="fa-solid fa-code accent"></i> .NET 8 API (C#)</button>
+                        </div>
+                    </div>
+                    <div class="terminal-body">
+                        <!-- X++ Code Tab -->
+                        <pre class="code-block active" id="code-xplusplus"><code><span class="code-keyword">class</span> <span class="code-class">D365OrderProcessor</span>
+{
+    <span class="code-comment">/// &lt;summary&gt;</span>
+    <span class="code-comment">/// Custom X++ extension for processing Sales Orders in D365 F&O</span>
+    <span class="code-comment">/// &lt;/summary&gt;</span>
+    <span class="code-keyword">public static void</span> <span class="code-func">processSalesOrder</span>(<span class="code-type">SalesId</span> _salesId)
+    {
+        <span class="code-type">SalesTable</span> salesTable = <span class="code-type">SalesTable</span>::<span class="code-func">find</span>(_salesId, <span class="code-keyword">true</span>);
+
+        <span class="code-keyword">if</span> (salesTable.RecId != <span class="code-number">0</span> &amp;&amp; salesTable.SalesStatus == <span class="code-type">SalesStatus</span>::Backorder)
+        {
+            <span class="code-func">ttsbegin</span>;
+            salesTable.SalesStatus = <span class="code-type">SalesStatus</span>::Invoiced;
+            salesTable.<span class="code-func">update</span>();
+            <span class="code-func">ttscommit</span>;
+
+            <span class="code-func">info</span>(<span class="code-string">strFmt</span>(<span class="code-string">"Order %1 successfully processed in D365 F&O."</span>, _salesId));
+        }
+    }
+}</code></pre>
+
+                        <!-- C# Code Tab -->
+                        <pre class="code-block" id="code-csharp"><code><span class="code-annotation">[ApiController]</span>
+<span class="code-annotation">[Route("api/v1/[controller]")]</span>
+<span class="code-keyword">public class</span> <span class="code-class">OrdersController</span> : <span class="code-class">ControllerBase</span>
+{
+    <span class="code-keyword">private readonly</span> <span class="code-type">IOrderService</span> _orderService;
+
+    <span class="code-keyword">public</span> <span class="code-func">OrdersController</span>(<span class="code-type">IOrderService</span> orderService) => _orderService = orderService;
+
+    <span class="code-annotation">[HttpPost]</span>
+    <span class="code-annotation">[Authorize(Roles = "Customer,Admin")]</span>
+    <span class="code-keyword">public async</span> <span class="code-type">Task&lt;IActionResult&gt;</span> <span class="code-func">CreateOrder</span>(<span class="code-annotation">[FromBody]</span> <span class="code-type">CreateOrderDto</span> dto)
+    {
+        <span class="code-keyword">var</span> result = <span class="code-keyword">await</span> _orderService.<span class="code-func">CreateOrderAsync</span>(dto);
+        <span class="code-keyword">return</span> <span class="code-func">Ok</span>(<span class="code-keyword">new</span> { Success = <span class="code-keyword">true</span>, OrderId = result.Id });
+    }
+}</code></pre>
+                    </div>
                 </div>
             </div>
         </section>
@@ -304,24 +524,12 @@
                 <h2 class="section-title">Certifications</h2>
                 <div class="cert-grid">
                     <div class="cert-card">
-                        <h3>Certified Spring Boot Developer</h3>
-                        <p>Udemy</p>
-                    </div>
-                    <div class="cert-card">
                         <h3>SQL (Advanced) Certificate</h3>
                         <p>HackerRank</p>
                     </div>
                     <div class="cert-card">
-                        <h3>SQL (Intermediate) Certificate</h3>
-                        <p>HackerRank</p>
-                    </div>
-                    <div class="cert-card">
-                        <h3>SQL (Basic) Certificate</h3>
-                        <p>HackerRank</p>
-                    </div>
-                    <div class="cert-card">
                         <h3>Git and GitHub</h3>
-                        <p>Almdrasa</p>
+                        <p>Almadrasa</p>
                     </div>
                 </div>
             </div>
@@ -331,19 +539,64 @@
         <section id="contact" class="section hidden">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-content">
-                    <p>I'm currently available for freelance work or full-time positions. If you have a project that
-                        needs some coding magic, let's talk.</p>
-                    <a href="mailto:mostafaosama1012005@gmail.com" class="btn btn-primary big-btn">Say Hello <i
-                            class="fa-regular fa-envelope"></i></a>
-
-                    <div class="social-links">
-                        <a href="https://github.com/MostafaOsama73" target="_blank" class="social-link"><i
-                                class="fa-brands fa-github"></i></a>
-                        <a href="https://linkedin.com/in/mostafa-osama-dev" target="_blank" class="social-link"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                <div class="contact-wrapper">
+                    <div class="contact-info-card">
+                        <h3>Let's build something scalable!</h3>
+                        <p>I'm currently available for full-time D365 F&O and .NET Backend engineering roles, as well as
+                            high-impact freelance projects.</p>
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <i class="fa-solid fa-location-dot accent"></i>
+                                <span>Egypt (Open to Remote & Relocation)</span>
+                            </div>
+                            <div class="contact-detail-item">
+                                <i class="fa-solid fa-envelope accent"></i>
+                                <a href="mailto:mostafaosama1012005@gmail.com">mostafaosama1012005@gmail.com</a>
+                            </div>
+                            <div class="contact-detail-item">
+                                <i class="fa-solid fa-phone accent"></i>
+                                <a href="tel:+201207355566">+20 120 735 5566</a>
+                            </div>
+                            <div class="contact-detail-item">
+                                <i class="fa-brands fa-whatsapp accent"></i>
+                                <a href="https://wa.me/201207355566" target="_blank">+20 120 735 5566 (WhatsApp)</a>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/MostafaOsama73" target="_blank" class="social-link"
+                                title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com/in/mostafa-osama-dev" target="_blank" class="social-link"
+                                title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://wa.me/201207355566" target="_blank" class="social-link"
+                                title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
                     </div>
+                    <form id="contact-form" action="https://formsubmit.co/mostafaosama1012005@gmail.com" method="POST" class="contact-form-card">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" name="name" required placeholder="e.g. John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Your Email</label>
+                            <input type="email" id="contact-email" name="email" required
+                                placeholder="e.g. john@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" required
+                                placeholder="Project Opportunity / Technical Inquiry">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="4" required
+                                placeholder="Hello Mostafa, I would like to discuss..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary big-btn">Send Message <i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -352,6 +605,85 @@
     <footer class="footer">
         <p>&copy; <span id="year"></span> Mostafa. All rights reserved.</p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201207355566" target="_blank" class="whatsapp-float-btn" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Resume / CV Preview Modal -->
+    <div id="cv-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="close-cv-modal" aria-label="Close modal"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-file-pdf accent"></i> Mostafa Osama – Professional Resume</h2>
+                <p>Microsoft Dynamics 365 F&O & .NET Backend Developer</p>
+            </div>
+            <div class="modal-body">
+                <div class="cv-summary-card">
+                    <h3><i class="fa-solid fa-user-gear accent"></i> Summary</h3>
+                    <p>Microsoft Dynamics 365 F&O Developer with a strong .NET backend engineering foundation.
+                        Specialized in X++, ASP.NET Core, EF Core, SQL Server, RESTful APIs, and Clean Architecture.</p>
+                </div>
+                <div class="cv-quick-highlights">
+                    <div class="cv-highlight-item">
+                        <i class="fa-solid fa-circle-check accent"></i> <span>Developing & customizing D365 F&O using
+                            X++ (Tables, Forms, Workflows, Classes)</span>
+                    </div>
+                    <div class="cv-highlight-item">
+                        <i class="fa-solid fa-circle-check accent"></i> <span>20+ Production RESTful APIs built with
+                            .NET 8 & EF Core</span>
+                    </div>
+                    <div class="cv-highlight-item">
+                        <i class="fa-solid fa-circle-check accent"></i> <span>40% Query Performance Optimization on SQL
+                            Server database queries</span>
+                    </div>
+                    <div class="cv-highlight-item">
+                        <i class="fa-solid fa-circle-check accent"></i> <span>B.Sc. in Machine Intelligence from
+                            Minufiya University (Jun 2026)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="mailto:mostafaosama1012005@gmail.com?subject=Request%20Resume%20PDF" class="btn btn-primary"><i
+                        class="fa-regular fa-envelope"></i> Request Direct PDF via Email</a>
+                <button class="btn btn-secondary" id="modal-close-action">Close Preview</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Architecture Spec Modal -->
+    <div id="project-spec-modal" class="modal-overlay">
+        <div class="modal-container project-modal-container">
+            <button class="modal-close-btn" id="close-project-modal" aria-label="Close modal"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h2 id="project-modal-title"><i class="fa-solid fa-layer-group accent"></i> Project Details</h2>
+                <p id="project-modal-subtitle">Technical Architecture & Features</p>
+            </div>
+            <div class="modal-body" id="project-modal-body">
+                <!-- Dynamically populated -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="close-project-action">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast-container">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <div class="toast-content">
+            <h4 id="toast-title">Message Sent!</h4>
+            <p id="toast-msg">Thank you for reaching out. Mostafa will reply soon.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
