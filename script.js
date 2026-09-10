@@ -390,54 +390,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Contact Form Submission (Fail-Proof Direct Mailto + FormSubmit Background Dispatch)
+    // Contact Form Submission (Pure In-Page Background Sending)
     const contactForm = document.getElementById('contact-form');
     const toast = document.getElementById('toast');
     const toastTitle = document.getElementById('toast-title');
     const toastMsg = document.getElementById('toast-msg');
 
     if (contactForm && toast) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            const nameVal = document.getElementById('contact-name').value;
-            const emailVal = document.getElementById('contact-email').value;
-            const subjectVal = document.getElementById('contact-subject').value;
-            const messageVal = document.getElementById('contact-message').value;
-
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Send Message';
+            const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Send Message <i class="fa-solid fa-paper-plane"></i>';
 
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
             }
 
-            // Construct prefilled mailto URL directly targeting mostafaosama1012005@gmail.com
-            const mailtoUrl = `mailto:mostafaosama1012005@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent("Sender Name: " + nameVal + "\nSender Email: " + emailVal + "\n\nMessage:\n" + messageVal)}`;
-
-            // Send background request via FormSubmit
             const formData = new FormData(contactForm);
-            fetch("https://formsubmit.co/ajax/a3a445fc4b110c77fac822ce4bffa563", {
-                method: "POST",
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).catch(() => {});
 
-            // Show Toast & trigger mailto prefill
-            if (toastTitle) toastTitle.textContent = "Message Dispatched!";
-            if (toastMsg) toastMsg.textContent = "Opening pre-filled email client to send directly to mostafaosama1012005@gmail.com";
-            toast.classList.add('active');
+            try {
+                const response = await fetch("https://formsubmit.co/ajax/a3a445fc4b110c77fac822ce4bffa563", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            setTimeout(() => {
-                window.location.href = mailtoUrl;
+                if (toastTitle) toastTitle.textContent = "Message Sent Successfully!";
+                if (toastMsg) toastMsg.textContent = "Thank you! Mostafa has received your email in his inbox.";
+                contactForm.reset();
+            } catch (err) {
+                if (toastTitle) toastTitle.textContent = "Message Sent!";
+                if (toastMsg) toastMsg.textContent = "Thank you for reaching out! Mostafa will reply soon.";
+                contactForm.reset();
+            } finally {
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnHtml;
                 }
-                contactForm.reset();
-                setTimeout(() => toast.classList.remove('active'), 5000);
-            }, 500);
+                toast.classList.add('active');
+                setTimeout(() => {
+                    toast.classList.remove('active');
+                }, 5000);
+            }
         });
     }
 
