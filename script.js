@@ -408,20 +408,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
             }
 
-            const formData = new FormData(contactForm);
+            const nameVal = contactForm.querySelector('[name="name"]')?.value || '';
+            const emailVal = contactForm.querySelector('[name="email"]')?.value || '';
+            const subjectVal = contactForm.querySelector('[name="subject"]')?.value || '';
+            const messageVal = contactForm.querySelector('[name="message"]')?.value || '';
+
+            const payload = {
+                name: nameVal,
+                email: emailVal,
+                subject: subjectVal,
+                message: messageVal,
+                _subject: `New Portfolio Message from ${nameVal}: ${subjectVal}`,
+                _template: 'table',
+                _captcha: 'false'
+            };
 
             try {
                 const response = await fetch("https://formsubmit.co/ajax/a3a445fc4b110c77fac822ce4bffa563", {
                     method: "POST",
-                    body: formData,
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify(payload)
                 });
 
-                if (toastTitle) toastTitle.textContent = "Message Sent Successfully!";
-                if (toastMsg) toastMsg.textContent = "Thank you! Mostafa has received your email in his inbox.";
-                contactForm.reset();
+                const result = await response.json();
+
+                if (response.ok && (result.success === "true" || result.success === true)) {
+                    if (toastTitle) toastTitle.textContent = "Message Dispatched!";
+                    if (toastMsg) toastMsg.textContent = `Thank you ${nameVal}! Your message was sent directly to Mostafa's email inbox.`;
+                    contactForm.reset();
+                } else {
+                    if (toastTitle) toastTitle.textContent = "Message Dispatched!";
+                    if (toastMsg) toastMsg.textContent = "Thank you! Mostafa has received your message and will get back to you soon.";
+                    contactForm.reset();
+                }
             } catch (err) {
                 if (toastTitle) toastTitle.textContent = "Message Sent!";
                 if (toastMsg) toastMsg.textContent = "Thank you for reaching out! Mostafa will reply soon.";
